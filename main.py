@@ -43,3 +43,11 @@ def updateTask(id: int, todo: ToDo):
         return {'message': 'success'}
     except:
         return {'message': 'Error updating task'}
+    
+@app.delete('/task/{id}')
+def deleteTask(id: int):
+    try:
+        del tasks[id]
+        return {'message': 'success'}
+    except:
+        return {'message': 'Error deleting task'}
