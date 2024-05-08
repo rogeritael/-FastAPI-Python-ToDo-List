@@ -35,3 +35,11 @@ def findTaskById(id: int):
         return tasks[id]
     except:
         return {'message': 'Task not found'}
+    
+@app.put('/task/{id}')
+def updateTask(id: int, todo: ToDo):
+    try:
+        tasks[id] = todo
+        return {'message': 'success'}
+    except:
+        return {'message': 'Error updating task'}
